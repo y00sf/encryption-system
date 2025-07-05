@@ -5,7 +5,7 @@ public class Program
 	public static void Main()
 	{
 
-		Console.WriteLine("1 to encryption, 2 to unencryption");
+		Console.WriteLine("1 to Encrypt, 2 to Decrypt");
 		string choosse = Console.ReadLine();
 		int choose = int.Parse(choosse);
 
@@ -14,17 +14,14 @@ public class Program
 		if (choose == 1)
 		{
 			//in
-			Console.WriteLine("write the text:");
+			Console.WriteLine("Enter the text:");
 			string text = Console.ReadLine();
 			byte asci = 85;
 			int pass = 85;
 			string ttext = string.Empty;
 			string fin = ttext;
 
-			//------------------------------------
 
-
-			//------------------------------------
 			foreach (char c in text)
 			{
 				asci = (byte)c;
@@ -38,27 +35,24 @@ public class Program
 				//------------------------------------
 
 				Console.WriteLine();
-				Console.WriteLine("المرسل:");
-				Console.WriteLine("enter         " + c);
-				Console.WriteLine("ascii         " + asci);
-				Console.WriteLine("binary        " + binary);
-				Console.WriteLine("cyph-binary   " + ao);
-				Console.WriteLine("cyph-ascii    " + tcyph);
+				Console.WriteLine("The letters: " + c);
+				Console.WriteLine("ASCII: " + asci);
+				Console.WriteLine("Binary: " + binary);
+				Console.WriteLine("Encrypted binary: " + ao);
+				Console.WriteLine("Encrypted ASCII:" + tcyph);
 
-				//------------------------------------
 
 				ttext = tcyph.ToString();
 				fin = fin + ttext;
 			}
 
-			//------------------------------------
 
 			Console.WriteLine();
-			Console.WriteLine("cyph end :" + fin);
+			Console.WriteLine("Encryption result :" + fin);
 			Console.WriteLine();
 
 
-			Console.WriteLine("2 to unencryption, 3 to main menu");
+			Console.WriteLine("2 to Decrypt, 3 to main menu");
 			choosse = Console.ReadLine();
 			choose = int.Parse(choosse);
 
@@ -79,14 +73,12 @@ public class Program
 			string tuncyph = tuncyphF;
 
 
-			//------------------------------------
 
-			Console.WriteLine("Type the ciphertext:");
+			Console.WriteLine("Type the encrypted text:");
 			theEnter = Console.ReadLine();
 			foreach (char y in theEnter)
 			{
 				Console.WriteLine();
-				Console.WriteLine("المستقبل:");
 
 				int b = y ^ tpass;
 
@@ -95,14 +87,11 @@ public class Program
 				string binary2 = Convert.ToString(b, 2);
 
 				char charAsci2 = (char)asci2;
-				//------------------------------------
 
-				Console.WriteLine("cyph-ascii     " + y);
-				Console.WriteLine("binary-uncyph  " + binary2);
-				Console.WriteLine("asci           " + asci2);
-				Console.WriteLine("end            " + charAsci2);
-
-				//------------------------------------
+				Console.WriteLine("Encrypted- ASCII: " + y);
+				Console.WriteLine("Encrypted binary: " + binary2);
+				Console.WriteLine("ASCII: " + asci2);
+				Console.WriteLine("Result: " + charAsci2);
 
 				tuncyphF = charAsci2.ToString();
 				tuncyph = tuncyph + charAsci2;
@@ -111,7 +100,7 @@ public class Program
 
 			Console.WriteLine();
 			Console.WriteLine();
-			Console.WriteLine("uncyph end " + tuncyph);
+			Console.WriteLine("Decryption result " + tuncyph);
 
 
 
